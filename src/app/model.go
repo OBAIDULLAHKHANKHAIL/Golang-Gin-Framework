@@ -40,7 +40,7 @@ var employees = map[string]Employee{
 }
 
 var TimesOff = map[string][]TimeOff{
-	"962134":{
+	"962134": {
 		{
 			Type:      "Holiday",
 			Amount:    8.,
