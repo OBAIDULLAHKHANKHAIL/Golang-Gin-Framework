@@ -32,7 +32,9 @@ func registerRoutes() *gin.Engine {
 
 	})
 
-	admin := r.Group("/admin")
+	admin := r.Group("/admin", gin.BasicAuth(gin.Accounts{
+		"admin": "admin",
+	}))
 	admin.GET("/", func(ctx *gin.Context) {
 		ctx.HTML(http.StatusOK, "admin-overview.html", nil)
 	})
